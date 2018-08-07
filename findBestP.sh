@@ -12,8 +12,8 @@ esac
 done
 
 if [[ $optU = help ]]; then
-  echo "   --- Find and print Slurm configuration: sh findBestQ.sh -f submit.sh -o set"
-  echo "   --- Check for the best Slurm partition: sh findBestQ.sh -f submit.sh -o check"
+  echo "   --- Find and print Slurm configuration: sh findBestP.sh -f submit.sh -o set"
+  echo "   --- Check for the best Slurm partition: sh findBestP.sh -f submit.sh -o check"
 fi
 
 submissionScript=$optF
@@ -76,8 +76,8 @@ if [[ $optU = check ]]; then
   fi
 
   if [ ! -e tmpwdir/allowedParts.txt ]; then
-    echo "   --- Error: allowedParts.txt file is not there. Running: sh findBestQ.sh -f $submissionScript -o set"
-    sh findBestQ.sh -f $submissionScript -o set
+    echo "   --- Error: allowedParts.txt file is not there. Running: sh findBestP.sh -f $submissionScript -o set"
+    sh findBestP.sh -f $submissionScript -o set
   fi
 
   # Check specific Slurm submission line number for partition name
