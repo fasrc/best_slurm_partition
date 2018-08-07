@@ -1,5 +1,7 @@
 #!/bin/bash
 
+excludeP=rc_admin
+
 while getopts o:f: option
 do
 case "${option}"
@@ -45,7 +47,7 @@ if [[ $optU = set ]]; then
   # Number of groups associated with user
   grps=$(groups)
   nGrp=$(echo $grps | wc -w)
-  rm -f allowedParts.txt
+  rm -f tmpwdir/allowedParts.txt
 
   # Loop over SLURM partitions
   for i in $(seq 2 2 $nL); do
@@ -54,7 +56,7 @@ if [[ $optU = set ]]; then
 
     for j in $(seq 1 $nGrp); do
       grpN=$(echo $grps | cut -d' ' -f$j)
-      if [ $grpN != rc_admin ]; then
+      if [ $grpN != $excludeP ]; then
         if [[ $sw = *"$grpN"* ]]; then
           #echo "   --- Group: $grpN, Partition: $parName"
           echo $parName >> tmpwdir/allowedParts.txt
@@ -90,6 +92,7 @@ if [[ $optU = check ]]; then
   fi
 
   rm -f tmpwdir/result.txt
+  echo " "
 
   # Loop over each allowed Slurm partition listed in allowedParts.txt file
   for i in $(cat tmpwdir/allowedParts.txt); do
