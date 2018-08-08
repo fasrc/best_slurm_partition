@@ -8,18 +8,22 @@ Find the Slurm partition with the minimum delay to run your job.
 
 - Sample output:
 
---- Error in using partition: bigmem  
---- Error in using partition: gpu_requeue  
+--- Error using partition: aagk80  
+--- Error using partition: bigmem  
+--- Error using partition: gpu_requeue  
+--- Check tmpwdir/error.log for error log  
 
---- Results sorted by time (sec)  
---- 0 seconds on: gpu  
---- 0 seconds on: olveczky  
---- 0 seconds on: olveczkygpu  
---- 0 seconds on: test  
---- 0 seconds on: unrestricted  
---- 1380 seconds on: serial_requeue  
---- 86520 seconds on: shared  
---- 133980 seconds on: general  
+--- Waiting time to run this job on SLURM partitions sorted by time (sec)  
+--- 0: gpu  
+--- 0: olveczky  
+--- 0: olveczkygpu  
+--- 0: test  
+--- 0: unrestricted  
+--- 1: aagk80_requeue  
+--- 2: knl_centos7  
+--- 480: serial_requeue  
+--- 1500: general  
+--- 212520: shared   
 
 
 - Check `tmpwdir/error.log` for error log.
