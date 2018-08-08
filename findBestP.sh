@@ -1,6 +1,6 @@
 #!/bin/bash
 
-excludeP=rc_admin
+excludeGrp=rc_admin
 
 while getopts o:f: option
 do
@@ -56,7 +56,7 @@ if [[ $optU = set ]]; then
 
     for j in $(seq 1 $nGrp); do
       grpN=$(echo $grps | cut -d' ' -f$j)
-      if [ $grpN != $excludeP ]; then
+      if [ $grpN != $excludeGrp ]; then
         if [[ $sw = *"$grpN"* ]] || [[ $sw = *"AllowGroups=ALL"* ]]; then
           #echo "   --- Group: $grpN, Partition: $parName"
           echo $parName >> tmpwdir/allowedParts.txt
