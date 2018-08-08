@@ -6,7 +6,7 @@ Find the Slurm partition with the minimum delay to run your job.
 - Check for the best Slurm partition: `sh findBestP.sh -f submit.sh -o check`
 - Help: `sh findBestP.sh -o help`
 
-Sample output:
+- Sample output:
 
 --- Error in using partition: bigmem  
 --- Error in using partition: gpu_requeue  
@@ -20,3 +20,6 @@ Sample output:
 --- 1380 seconds on: serial_requeue  
 --- 86520 seconds on: shared  
 --- 133980 seconds on: general  
+
+
+- Check `tmpwdir/error.log` for error log.

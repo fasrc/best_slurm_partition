@@ -10,6 +10,6 @@
 #SBATCH -o Job.%N.%j.out # STDOUT
 #SBATCH -e Job.%N.%j.err # STDERR
 
-module load Anaconda/4.3.0-fasrc01
+module load Anaconda3/5.0.1-fasrc01
 
 python -c "import datetime; print(\"Date and time is: \" + str(datetime.datetime.now()))"
