@@ -23,3 +23,6 @@ Find the Slurm partition with the minimum delay to run your job.
 
 
 - Check `tmpwdir/error.log` for error log.
+
+
+![alt text](Example.gif?raw=true "Example Run")
