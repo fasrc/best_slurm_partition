@@ -2,6 +2,13 @@
 
 excludeGrp=rc_admin
 
+if hash sinfo 2>/dev/null; then
+  echo " "
+else
+  echo "   --- Error: Slurm is not available in this node."
+  exit 1
+fi
+
 while getopts o:f: option
 do
 case "${option}"
