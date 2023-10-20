@@ -93,7 +93,7 @@ if [[ $optU = check ]]; then
   lineN=$(grep -n " -p "  $submissionScript | cut -d':' -f1)
 
   if [ ! $lineN ]; then
-    lineN=$(grep -n " --partition "  $submissionScript | cut -d':' -f1)
+    lineN=$(grep -n " --partition"  $submissionScript | cut -d':' -f1)
     if [ ! $lineN ]; then
       echo "   --- Error: Specifiy a default partition in Slurm submission script."
       exit 1
